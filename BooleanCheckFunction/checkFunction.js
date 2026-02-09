@@ -4,15 +4,16 @@ function booWho(value) {
      } else {
         return false;
     }
+    return value;
 }
 
-console.log(booWho(true));
-console.log(booWho(false));
-console.log(booWho([1,2,3]));
-console.log(booWho([].slice));
-console.log(booWho({ "a": 1 }));
-console.log(booWho(1));
-console.log(booWho(NaN));
-console.log(booWho("a"));
-console.log(booWho("true"));
-console.log(booWho("false"));
+booWho(true);
+booWho(false);
+booWho([1,2,3]);
+booWho([].slice);
+booWho({ "a": 1 });
+booWho(1);
+booWho(NaN);
+booWho("a");
+booWho("true");
+booWho("false");
