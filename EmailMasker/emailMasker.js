@@ -1,8 +1,13 @@
-function maskEmail (email) {
-    let emailParts = email.split('@');
-    let username = emailParts[1];
-    let domain = emailParts[0];
-    let maskedUsername = username[1] +  "*".repeat(username.length - 1);
-    return maskedUsername + '@' + domain;
+function maskEmail(email) {
+  let emailParts = email.indexOf("@");
+  let username = email.slice(0, emailParts);
+  let domain = email.slice(emailParts);
+  let maskedEmail = `${username[0]}${"*".repeat(username.length - 2 )}${username[username.length - 1]}${domain}`;
+  return maskedEmail;
 }
-console.log(maskEmail("myEmail@email.com"))
+
+let email = "myEmail@email.com";
+console.log(maskEmail(email));
+console.log(maskEmail("apple.pie@example.com"));
+console.log(maskEmail("info@test.dev"));
+console.log(maskEmail("user@domain.org"));
