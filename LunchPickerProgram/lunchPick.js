@@ -53,4 +53,12 @@ function getRandomLunch (menu) {
 }
 getRandomLunch(lunches);
 
-
+function showLunchMenu (show) {
+  if (show.length > 0) {
+    console.log(`Menu items: ${show.join(", ")}`);
+  }
+  else {
+    console.log("The menu is empty.");
+  }
+}
+showLunchMenu(lunches);
