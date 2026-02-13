@@ -1,25 +1,44 @@
 let lunches = [];
 
-function addLunchToEnd (lunch) {
-  lunches.push("Sushi");
-  return `${lunch} added to the end of the lunch menu.`;
+function addLunchToEnd (menu, item) {
+  menu.push(item);
+  console.log(`${item} added to the end of the lunch menu.`);
+  return menu;
 }
-console.log(addLunchToEnd(lunches));
+addLunchToEnd(lunches, "Sushi");
 
 
-function addLunchToStart (itemStart) {
-  lunches.unshift("Tempura");
-  return `${itemStart} added to the start of the lunch menu.`
+function addLunchToStart (menu, item) {
+  menu.unshift(item);
+  console.log(`${item} added to the start of the lunch menu.`);
+  return menu;
 }
-console.log(addLunchToStart(lunches));
+addLunchToStart(lunches, "Tempura");
 
-function removeLastLunch (removeLunch) {
-  if (lunches.pop()) {
-    return `${removeLunch} removed from the end of the lunch menu.`;
+
+
+function removeLastLunch (menu,) {
+  if (menu.length > 0 ) {
+   let removedItem =  menu.pop();
+   console.log(`${removedItem} removed from the end of the lunch menu.`);
   }
   else {
-    return "No lunches to remove";
+    console.log("No Lunches to remove.");
   }
+   return menu;
 }
-console.log(removeLastLunch(lunches));
+removeLastLunch(lunches);
+
+
+function removeFirstLunch (menu) {
+  if (menu.length > 0) {
+    let removedMenu = menu.unshift();
+    console.log(`${removedMenu} removed from the start of the lunch menu.`);
+  } 
+  else {
+    "No lunches to remove.";
+  }
+  return menu;
+}
+removeFirstLunch(lunches);
 
