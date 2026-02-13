@@ -23,7 +23,7 @@ function removeLastLunch (menu,) {
    console.log(`${removedItem} removed from the end of the lunch menu.`);
   }
   else {
-    console.log("No Lunches to remove.");
+    console.log("No lunches to remove.");
   }
    return menu;
 }
@@ -32,13 +32,25 @@ removeLastLunch(lunches);
 
 function removeFirstLunch (menu) {
   if (menu.length > 0) {
-    let removedMenu = menu.unshift();
+    let removedMenu = menu.shift();
     console.log(`${removedMenu} removed from the start of the lunch menu.`);
   } 
   else {
-    "No lunches to remove.";
+    console.log("No lunches to remove.");
   }
   return menu;
-}
+} 
 removeFirstLunch(lunches);
+
+function getRandomLunch (menu) {
+  if (menu.length > 0) {
+    let randomIndex = Math.floor(Math.random()*menu.length);
+    console.log(`Randomly selected lunch: ${menu[randomIndex]}`);
+  }
+  else {
+    console.log("No lunches available.");
+  }
+}
+getRandomLunch(lunches);
+
 
