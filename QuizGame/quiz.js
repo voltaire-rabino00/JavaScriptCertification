@@ -5,6 +5,7 @@ const questions = [{
   answer: "A programming language"
   }];
 
-  function getRandomQuestion (question) {
-    question.length(Math.random(Math.floor()* 4));
+function getRandomQuestion (question) {
+    let index = Math.floor(Math.random() * question.length);
+    return question[index];
   }
