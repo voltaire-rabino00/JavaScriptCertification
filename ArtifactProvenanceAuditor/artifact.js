@@ -55,3 +55,39 @@ function moveArtifact(id, gallery, year) {
 
 moveArtifact(102, "Hall B", 2026);
 console.log(collection[102].locations);
+
+const toggleDisplayStatus = (id) => {
+  const artifact = collection[id];
+  if (artifact) {
+    artifact.onDisplay = !artifact.onDisplay;
+  };
+}
+console.log(collection[102].onDisplay);
+toggleDisplayStatus(102);
+console.log(collection[102].onDisplay);
+
+
+const updateCurator = (id, name) => {
+  const artifact = collection[id];
+
+  if (artifact) {
+    collection[id].curator.name = name;
+  }
+}
+updateCurator(101, "Fran Sinclair");
+console.log(collection[101].curator.name);
+
+const buildSummary = (id) => {
+  const artifact = collection[id];
+  if (!artifact) {
+    console.log("Artifact not found");
+    return;
+  }
+   const currentLocation = artifact.locations[artifact.locations.length - 1];
+  return `${artifact.title}
+Category: ${artifact.category}
+Curator: ${artifact.curator.name}
+Current Gallery: ${currentLocation.gallery}
+On Display: ${artifact.onDisplay}`;
+};
+console.log(buildSummary(101));
