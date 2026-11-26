@@ -36,21 +36,22 @@ function getArtifactTitle(id) {
 
 console.log(getArtifactTitle(102));
 
-const addTag = (id, tag) => {
+function addTag(id, tag) {
   const artifact = collection[id];
   if (artifact && !artifact.tags.includes(tag)) {
     artifact.tags.push(tag);
   }
 }
+
 addTag(101, "royal");
 console.log(collection[101].tags);
 
-const moveArtifact = (id, gallery, year) => {
+function moveArtifact(id, gallery, year) {
   const artifact = collection[id];
-  if(artifact) {
-    artifact.push(gallery)
+  if (artifact) {
+    artifact.locations.push({ gallery, year });
   }
 }
 
-
-// To be Continued 
+moveArtifact(102, "Hall B", 2026);
+console.log(collection[102].locations);
